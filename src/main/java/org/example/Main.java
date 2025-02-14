@@ -78,7 +78,7 @@ public class Main {
         thing.setNumber(Integer.parseInt(args[2]));
         zooService.addInventory(thing);
     }
-
+    // Эта функция работает как DI контейнер - она создаёт нужные для работы сервисы и передаёт их в конструктор ZooService
     private static ZooService initializeServices() {
         AnimalRepository animalRepository = new AnimalRepository();
         InventoryRepository inventoryRepository = new InventoryRepository();
