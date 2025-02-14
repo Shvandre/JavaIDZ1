@@ -5,7 +5,7 @@ import java.util.Random;
 @Component
 public class ThingFactory {
 
-    public Thing createThing(String type) {
+    public static Thing createThing(String type) {
         switch (type.toLowerCase()) {
             case "table":
                 return new Table();

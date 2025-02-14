@@ -5,7 +5,7 @@ import java.util.Random;
 @Component
 public class AnimalFactory {
 
-    public Animal createAnimal(String type) {
+    public static Animal createAnimal(String type) {
         switch (type.toLowerCase()) {
             case "monkey":
                 return new Monkey();

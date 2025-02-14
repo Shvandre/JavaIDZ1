@@ -1,4 +1,4 @@
 package org.example;
 
-public class Tiger extends Predator{
+public class Tiger extends Predator {
 }
