@@ -1,7 +1,6 @@
 package org.example;
 
 import org.springframework.stereotype.Service;
-import java.util.Random;
 
 @Service
 public class ZooService {
@@ -53,7 +52,7 @@ public class ZooService {
     public void printContactZooAnimals() {
         animalRepository.getAllAnimals().stream()
                 .filter(this::isContactZooAnimal)
-                .forEach(a -> System.out.println(a.toString() + " can be in the petting zoo"));
+                .forEach(a -> System.out.println(a + " can be in the petting zoo"));
     }
 
     private boolean isContactZooAnimal(Animal animal) {
