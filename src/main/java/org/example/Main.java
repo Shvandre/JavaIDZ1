@@ -1,13 +1,5 @@
 package org.example;
 
-import org.example.AnimalFactory;
-import org.example.ThingFactory;
-import org.example.*;
-import org.example.AnimalRepository;
-import org.example.InventoryRepository;
-import org.example.VetClinicService;
-import org.example.ZooService;
-
 import java.util.Scanner;
 
 public class Main {
