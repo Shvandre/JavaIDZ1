@@ -1,10 +1,12 @@
 package org.example;
 
 import java.util.Scanner;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ZooService zooService = initializeServices();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        ZooService zooService = context.getBean(ZooService.class);
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -77,12 +79,5 @@ public class Main {
         Thing thing = factory.createThing(args[1]);
         thing.setNumber(Integer.parseInt(args[2]));
         zooService.addInventory(thing);
-    }
-    // Эта функция работает как DI контейнер - она создаёт нужные для работы сервисы и передаёт их в конструктор ZooService
-    private static ZooService initializeServices() {
-        AnimalRepository animalRepository = new AnimalRepository();
-        InventoryRepository inventoryRepository = new InventoryRepository();
-        VetClinicService vetClinicService = new VetClinicService();
-        return new ZooService(animalRepository, inventoryRepository, vetClinicService);
     }
 }
